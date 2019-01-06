@@ -1,0 +1,2 @@
+# linux
+homework for interview
