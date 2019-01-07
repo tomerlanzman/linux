@@ -68,7 +68,7 @@ echo ""
 
 #Logged in users
 TitleLoggedinUsers="Logged in Users\t\t:\t"
-LoggedinUsers=$(users)
+LoggedinUsers=$(users | xargs -n1 | sort -u | xargs) # remove doubles
 echo -e $TitleLoggedinUsers$LoggedinUsers
 echo ""
 
@@ -89,7 +89,7 @@ echo ""
 #Detailed List of Users
 echo -e "Detailed List of Users\t:"
 echo ""
-finger # if not available use: w | sed '1d'
+w | sed '1d' #finger # if not available use: w | sed '1d'
 echo ""
 
 echo "*************   End Computer Report $now  *****************"
