@@ -79,7 +79,7 @@ echo -e "User\t\tHome Directory"
 read -a LoggedinUsersarray <<< $LoggedinUsers # Read line into an array
 COUNTER=0
 while [ $COUNTER -lt $RegisteredUsers ]; do
-    User=${LoggedinUsersarray[i]}
+    User=${LoggedinUsersarray[COUNTER]}
     HomeDir=$(eval echo ~$User) # puts out $User's home dir.
     echo -e $User"\t\t"$HomeDir
     let COUNTER=COUNTER+1
